@@ -4,6 +4,15 @@
   "newProjectRoot": "projects",
   "projects": {
     "playground": {
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "fr":{
+            "translation": "src/locale/messages.fr.xlf",
+            "baseHref": ""
+          }
+        }
+      },
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,6 +22,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize": true,
             "outputPath": "dist/playground",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -30,6 +40,9 @@
             "scripts": []
           },
           "configurations": {
+            "fr":{
+              "localize":["fr"]
+            },
             "production": {
               "budgets": [
                 {
@@ -59,12 +72,16 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
+            "fr": {
+              "browserTarget": "playground:build:development,fr"
+            },
             "production": {
               "browserTarget": "playground:build:production"
             },
             "development": {
               "browserTarget": "playground:build:development"
-            }
+            },
+            
           },
           "defaultConfiguration": "development"
         },
