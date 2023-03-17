@@ -1,0 +1,32 @@
+<h1 i18n>Welcome to the offical Angular Internationalization project!</h1>
+<p i18n>Let's work with dates: {{3/17/2023 | date}}</p>
+<p i18n>Let's work with currency: {{108 | currency}}</p>
+
+<ng-container i18n>I don't output any element</ng-container>
+
+<h2 i18n-{attribute_name}="{i18n_metadata}" {attribute_name}="{attribute_value}" ></h2>
+<img src="./angular.png" i18n-title title="Angular Logo" alt="Angular Logo"/>
+
+
+<h1 i18n="User welcome|An introduction header for this sample@@introductionHeader">
+  Hello i18n!
+</h1>
+
+<ng-container i18n>I don't output any element</ng-container>
+
+<br />
+
+<img [src]="logo" i18n-title title="Angular logo" alt="Angular logo"/>
+<br>
+<button type="button" (click)="inc(1)">+</button> <button type="button" (click)="inc(-1)">-</button>
+<span i18n>Updated {minutes, plural, =0 {just now} =1 {one minute ago} other {{{minutes}} minutes ago}}</span>
+({{minutes}})
+<br><br>
+<button type="button" (click)="male()">&#9794;</button> <button type="button" (click)="female()">&#9792;</button> <button type="button" (click)="other()">&#9895;</button>
+<span i18n>The author is {gender, select, male {male} female {female} other {other}}</span>
+<br><br>
+<span i18n>Updated: {minutes, plural,
+  =0 {just now}
+  =1 {one minute ago}
+  other {{{minutes}} minutes ago by {gender, select, male {male} female {female} other {other}}}}
+</span>
